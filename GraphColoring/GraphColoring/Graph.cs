@@ -27,5 +27,19 @@ namespace GraphColoring
             AdjacencyMatrix[vertexA, vertexB] = true;
             AdjacencyMatrix[vertexB, vertexA] = true;
         }
+
+        public string PrintAdjacencyMatrix()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < VertexCount; i++)
+            {
+                for (int j = 0; j < VertexCount; j++)
+                {
+                    sb.Append(AdjacencyMatrix[i, j] ? "1 " : "0 ");
+                }
+                sb.AppendLine();
+            }
+            return sb.ToString();
+        }
     }
 }
