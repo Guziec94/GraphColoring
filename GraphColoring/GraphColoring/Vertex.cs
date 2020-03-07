@@ -22,7 +22,7 @@ namespace GraphColoring
 
         public override string ToString()
         {
-            return $"Vertex: number-{VertexNumber}, degree-{Degree}, color-{Color}";
+            return $"Wierzchołek {VertexNumber} stopnia {Degree}. jest koloru {Color}";
         }
     }
 }

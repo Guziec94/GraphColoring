@@ -9,12 +9,21 @@ namespace GraphColoring
     /// <summary>
     /// Algorytm LF - largest first
     /// </summary>
-    public static class LargestFirstAlgorithm
+    public class LargestFirstAlgorithm
     {
-        public static void Execute(Graph graph)
+        private const string algorithmName = "Largest First";
+        private Graph graph;
+        private List<Vertex> orderedVertices;
+
+        public LargestFirstAlgorithm(Graph graph)
+        {
+            this.graph = graph;
+            orderedVertices = graph.Vertices.OrderByDescending(v => v.Degree).ToList();
+        }
+
+        public void Execute()
         {
             var colors = Enumerable.Range(0, graph.VertexCount).ToArray();
-            List<Vertex> orderedVertices = graph.Vertices.OrderByDescending(v => v.Degree).ToList();
             foreach (Vertex vertex in orderedVertices)
             {
                 List<int> adjacentColors = vertex.AdjacentVertices
@@ -24,6 +33,16 @@ namespace GraphColoring
                     .ToList();
                 vertex.Color = colors
                     .FirstOrDefault(c => !adjacentColors.Contains(c));
+            }
+        }
+
+        public void PrintSolution()
+        {
+            Console.WriteLine($"Rozwiązanie przy użyciu algorytmu {algorithmName}");
+
+            foreach(Vertex vertex in orderedVertices)
+            {
+                Console.WriteLine(vertex);
             }
         }
     }
