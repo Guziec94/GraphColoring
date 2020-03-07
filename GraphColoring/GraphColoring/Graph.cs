@@ -26,6 +26,8 @@ namespace GraphColoring
         {
             AdjacencyMatrix[vertexA, vertexB] = true;
             AdjacencyMatrix[vertexB, vertexA] = true;
+            Vertices[vertexB].AdjacentVertices.Add(Vertices[vertexA]);
+            Vertices[vertexA].AdjacentVertices.Add(Vertices[vertexB]);
         }
 
         public string PrintAdjacencyMatrix()
