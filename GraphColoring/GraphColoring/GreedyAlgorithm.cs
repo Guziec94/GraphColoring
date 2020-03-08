@@ -4,16 +4,16 @@ using System.Linq;
 namespace GraphColoring
 {
     /// <summary>
-    /// Algorytm LF - largest first
+    /// Algorytm zachłanny - greedy
     /// </summary>
-    public class LargestFirstAlgorithm: Algorithm
+    public class GreedyAlgorithm: Algorithm
     {
-        public LargestFirstAlgorithm(Graph graph)
+        public GreedyAlgorithm(Graph graph)
         {
-            algorithmName = "Largest First";
+            algorithmName = "Greedy";
             this.graph = graph;
-            // descending order vertices by its Degree 
-            vertices = graph.Vertices.OrderByDescending(v => v.Degree).ToList();
+            // order vertices by its number - default sort
+            vertices = graph.Vertices.OrderBy(v=>v.VertexNumber).ToList();
             colors = Enumerable.Range(0, graph.VertexCount).ToArray();
         }
 

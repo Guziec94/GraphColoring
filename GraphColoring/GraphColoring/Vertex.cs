@@ -19,6 +19,7 @@ namespace GraphColoring
         public int EdgeCount { get; set; }
         public List<Vertex> AdjacentVertices { get; set; }
         public int Degree => AdjacentVertices.Count;
+        public int Saturation => AdjacentVertices.Select(v => v.Color).Distinct().Count();
 
         public override string ToString()
         {
