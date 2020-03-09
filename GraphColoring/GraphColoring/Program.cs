@@ -17,7 +17,7 @@ namespace GraphColoring
             if (clickedKey == ConsoleKey.T)
             {
                 DirectoryInfo directoryInfo = new DirectoryInfo(Environment.CurrentDirectory);
-                var files = directoryInfo.GetFiles("*.txt");
+                var files = directoryInfo.GetFiles("*.txt", SearchOption.AllDirectories);
                 Console.Write($"\nWybierz numer przykładu (0-{files.Length-1}): ");
                 int exampleNumber = int.Parse(Console.ReadLine());
                 var streamReader = new StreamReader(files[exampleNumber].FullName);
@@ -64,7 +64,7 @@ namespace GraphColoring
 
             Console.Write("\n\n");
 
-            var availableAlgortihms = new Type[] { typeof(LargestFirstAlgorithm), typeof(GreedyAlgorithm), typeof(SaturatedLargestFirstAlgorithm) };
+            var availableAlgortihms = new Type[] { typeof(LargestFirstAlgorithm), typeof(SaturatedLargestFirstAlgorithm), typeof(IndependentSetAlgorithm) };
             foreach(Type algorithm in availableAlgortihms)
             {
                 Algorithm testAlgorithm = (Algorithm)Activator.CreateInstance(algorithm, new object[] { graph });

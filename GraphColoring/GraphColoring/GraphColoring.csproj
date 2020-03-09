@@ -45,8 +45,8 @@
   <ItemGroup>
     <Compile Include="Graph.cs" />
     <Compile Include="Algorithm.cs" />
+    <Compile Include="IndependentSetAlgorithm.cs" />
     <Compile Include="SaturatedLargestFirstAlgorithm.cs" />
-    <Compile Include="GreedyAlgorithm.cs" />
     <Compile Include="LargestFirstAlgorithm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,22 +56,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TestData1.txt">
+    <Content Include="TestData\TestData1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData2.txt">
+    <Content Include="TestData\TestData2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData6.txt">
+    <Content Include="TestData\TestData7.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData5.txt">
+    <Content Include="TestData\TestData6.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData4.txt">
+    <Content Include="TestData\TestData5.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData3.txt">
+    <Content Include="TestData\TestData4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestData3.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
